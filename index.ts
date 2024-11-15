@@ -24,3 +24,9 @@ const reviews = [
     date: "27-03-2021",
   },
 ];
+
+//function to show total number of reviews on website 
+function totalReviews(value : number) {
+    reviewTotalDisplay.innerHTML = value.toString()
+}
+totalReviews(reviews.length)
