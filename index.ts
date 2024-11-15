@@ -26,7 +26,7 @@ const reviews = [
 ];
 
 //function to show total number of reviews on website 
-function totalReviews(value : number) {
-    reviewTotalDisplay.innerHTML = value.toString()
+function totalReviews(value : number, reviewer: string) {
+    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer
 }
-totalReviews(reviews.length)
+totalReviews(reviews.length, reviews[0].name)
