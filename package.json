@@ -1,13 +1,12 @@
 {
   "name": "project",
-  "dependencies": {},
   "devDependencies": {
-    "webpack": "^2.0",
-    "ts-loader": "*",
-    "typescript": "*"
+    "typescript": "*",
+    "vite": "^5.4.11"
   },
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack -w"
+    "dev": "vite",       
+    "build": "vite build", 
+    "serve": "vite preview"
   }
 }
