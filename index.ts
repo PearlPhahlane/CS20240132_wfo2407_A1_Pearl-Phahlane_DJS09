@@ -48,7 +48,60 @@ const you: {
   stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-
+// properties
+const properties: {
+  image: string;
+  title: string;
+  PricePerNight: number;
+  location: {
+    firstLine: string;
+    city: string;
+    code: number;
+    country: string;
+  };
+  contact: string;
+  isAvailable: boolean;
+}[] = [
+  {
+    image: "",
+    title: "Hallmark House Hotel",
+    PricePerNight: 250,
+    location: {
+      firstLine: "54 Siemert Road",
+      city: "Johannesburg",
+      code: 2094,
+      country: "South Africa",
+    },
+    contact: "frontdesk@hallmarkhotel.co.za",
+    isAvailable: false,
+  },
+  {
+    image: "",
+    title: "The Mainframe",
+    PricePerNight: 340,
+    location: {
+      firstLine: "238 Main Street",
+      city: "Johannesburg",
+      code: 2094,
+      country: "South Africa",
+    },
+    contact: "hello@block20.co.za",
+    isAvailable: true,
+  },
+  {
+    image: "",
+    title: "Arts on Main",
+    PricePerNight: 180,
+    location: {
+      firstLine: "264 Fox Street",
+      city: "Johannesburg",
+      code: 2001,
+      country: "South Africa",
+    },
+    contact: "hello@mabonengsociety.co.za",
+    isAvailable: true,
+  },
+];
 
 
 //functions
