@@ -61,7 +61,7 @@ const properties: {
     code: number;
     country: string;
   };
-  contact: string;
+  contact: [ number, string];
   isAvailable: boolean;
 }[] = [
   {
@@ -74,7 +74,7 @@ const properties: {
       code: 2094,
       country: "South Africa",
     },
-    contact: "frontdesk@hallmarkhotel.co.za",
+    contact: [ +270101235555, "frontdesk@hallmarkhotel.co.za"],
     isAvailable: false,
   },
   {
@@ -87,7 +87,7 @@ const properties: {
       code: 2094,
       country: "South Africa",
     },
-    contact: "hello@block20.co.za",
+    contact: [+270101236666, "hello@block20.co.za"],
     isAvailable: true,
   },
   {
@@ -100,7 +100,7 @@ const properties: {
       code: 2001,
       country: "South Africa",
     },
-    contact: "hello@mabonengsociety.co.za",
+    contact: [+270101237777, "hello@mabonengsociety.co.za"],
     isAvailable: true,
   },
 ];
