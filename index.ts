@@ -112,3 +112,16 @@ totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 
 //function to display the word 'back' and username
 populateUser(you.isReturning, you.firstName);
+
+
+//add properties to dashboard
+for(let i = 0; i < properties.length; i++) {
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML = properties[i].title
+    const image = document.createElement('img')
+    image.setAttribute('src', properties[i].image)
+    card.appendChild(image)
+    propertyContainer.appendChild(card)
+    
+}
