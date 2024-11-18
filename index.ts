@@ -6,47 +6,43 @@ const propertyContainer = document.querySelector('.properties');
 const footer = document.querySelector('.footer')
 
 import { totalReviews, populateUser } from './utils';
-import { Permissions } from './enums';
+import { LoyaltyUser, Permissions, loyaltyUser } from './enums';
+let isLoggedIn: boolean;
+
 
 //Reviews
 const reviews: {
   name: string;
   stars: number;
-  loyaltyUser: boolean;
+  loyaltyUser: LoyaltyUser;
   date: string
 }[] = [
   {
     name: "Sheia",
     stars: 5,
-    loyaltyUser: true,
+    loyaltyUser: LoyaltyUser.GOLD_USER,
     date: "01-04-2021",
   },
   {
     name: "Andrzej",
     stars: 3,
-    loyaltyUser: false,
+    loyaltyUser: LoyaltyUser.BRONZE_USER,
     date: "28-03-2021",
   },
   {
     name: "Omar",
     stars: 4,
-    loyaltyUser: true,
+    loyaltyUser: LoyaltyUser.SILVER_USER,
     date: "27-03-2021",
   },
 ];
 
 
 //user
-const you: {
-  firstName: string;
-  lastName: string;
-  isReturning: boolean;
-  age: number;
-  stayedAt: string []
-
-} = {
+const you = {
   firstName: 'Pearl',
   lastName: 'Phahlane',
+  permissions: Permissions.ADMIN,
   isReturning: true,
   age: 50,
   stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
@@ -115,6 +111,18 @@ totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 //function to display the word 'back' and username
 populateUser(you.isReturning, you.firstName);
 
+let authorityStatus: any;
+
+isLoggedIn = false
+
+function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
+   if (authorityStatus) {
+       const priceDisplay = document.createElement('div')
+       priceDisplay.innerHTML = price.toString() + '/night'
+       element.appendChild(priceDisplay)
+   }
+}
+
 
 //add properties to dashboard
 for(let i = 0; i < properties.length; i++) {
@@ -125,6 +133,7 @@ for(let i = 0; i < properties.length; i++) {
     image.setAttribute('src', properties[i].image)
     card.appendChild(image)
     propertyContainer.appendChild(card)
+    showDetails(you.permissions, card, properties[i].PricePerNight)
     
 }
 
