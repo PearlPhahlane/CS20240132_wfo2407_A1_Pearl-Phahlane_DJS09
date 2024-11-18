@@ -7,9 +7,9 @@ export function totalReviews(value : number, reviewer: string, isLoyalty: boolea
     reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + " " + showIcon
 }
 
-export function populateUser(isReturning: boolean, userName: string) {
+export function populateUser(isReturning: boolean, firstName: string) {
   if (isReturning) {
     returningUserDisplay.innerHTML = "back";
   }
-  userNameDisplay.innerHTML = userName;
+  userNameDisplay.innerHTML = firstName;
 }

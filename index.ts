@@ -32,10 +32,20 @@ const reviews: {
 ];
 
 
+//user
+const you: {
+  firstName: string;
+  lastName: string;
+  isReturning: boolean;
+  age: number;
+  stayedAt: string []
 
-const you = {
-  username: 'Pearl',
+} = {
+  firstName: 'Pearl',
+  lastName: 'Phahlane',
   isReturning: true,
+  age: 50,
+  stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
 
@@ -46,4 +56,4 @@ const you = {
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 
 //function to display the word 'back' and username
-populateUser(you.isReturning, you.username);
+populateUser(you.isReturning, you.firstName);
