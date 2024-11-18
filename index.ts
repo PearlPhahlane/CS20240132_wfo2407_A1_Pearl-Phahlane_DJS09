@@ -129,4 +129,4 @@ for(let i = 0; i < properties.length; i++) {
 
 //location
 const currentLocation: [string, string, number] = ['Johannesburg', '16:44', 28]
-footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + 'deg'
+footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '℃'
