@@ -6,6 +6,7 @@ const propertyContainer = document.querySelector('.properties');
 const footer = document.querySelector('.footer')
 
 import { totalReviews, populateUser } from './utils';
+import { Permissions } from './enums';
 
 //Reviews
 const reviews: {
