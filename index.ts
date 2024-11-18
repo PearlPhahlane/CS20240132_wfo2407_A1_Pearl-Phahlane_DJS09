@@ -2,7 +2,9 @@
 // Write a function that will only accept numbers and attend to
 // all TypeScript weakness flags.
 // : number
-import { totalReviews, populateUser } from './utils'
+const propertyContainer = document.querySelector('.properties');
+
+import { totalReviews, populateUser } from './utils';
 
 //Reviews
 const reviews: {
@@ -63,9 +65,9 @@ const properties: {
   isAvailable: boolean;
 }[] = [
   {
-    image: "",
+    image: "images/HallmarkHouse.png",
     title: "Hallmark House Hotel",
-    PricePerNight: 250,
+    PricePerNight: 350,
     location: {
       firstLine: "54 Siemert Road",
       city: "Johannesburg",
@@ -76,9 +78,9 @@ const properties: {
     isAvailable: false,
   },
   {
-    image: "",
+    image: "images/Mainframe.png",
     title: "The Mainframe",
-    PricePerNight: 340,
+    PricePerNight: 140,
     location: {
       firstLine: "238 Main Street",
       city: "Johannesburg",
@@ -89,7 +91,7 @@ const properties: {
     isAvailable: true,
   },
   {
-    image: "",
+    image: "images/artsonmain.png",
     title: "Arts on Main",
     PricePerNight: 180,
     location: {
