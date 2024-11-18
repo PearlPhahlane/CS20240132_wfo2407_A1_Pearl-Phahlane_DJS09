@@ -4,7 +4,13 @@
 // : number
 import { totalReviews, populateUser } from './utils'
 
-const reviews = [
+//Reviews
+const reviews: {
+  name: string;
+  stars: number;
+  loyaltyUser: boolean;
+  date: string
+}[] = [
   {
     name: "Sheia",
     stars: 5,
@@ -25,9 +31,7 @@ const reviews = [
   },
 ];
 
-//function to show total number of reviews on website 
 
-totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 
 const you = {
   username: 'Pearl',
@@ -35,4 +39,11 @@ const you = {
 }
 
 
-populateUser(you.isReturning, you.username)
+
+
+//functions
+//function to show total number of reviews on website 
+totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
+
+//function to display the word 'back' and username
+populateUser(you.isReturning, you.username);
