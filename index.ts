@@ -5,7 +5,7 @@
 const propertyContainer = document.querySelector('.properties');
 const footer = document.querySelector('.footer')
 
-import { totalReviews, populateUser, showDetails } from './utils';
+import { totalReviews, populateUser, showDetails, makeMultiple } from './utils';
 import { LoyaltyUser, Permissions, loyaltyUser } from './enums';
 import { Price, Title } from './type';
 
