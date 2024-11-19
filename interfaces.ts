@@ -1,4 +1,5 @@
 import { LoyaltyUser } from "./enums";
+import { Title, Price } from "./type";
 
 //implement interface to clean up repetitions
 export interface Review {

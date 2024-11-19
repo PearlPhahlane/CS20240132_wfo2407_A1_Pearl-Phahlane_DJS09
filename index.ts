@@ -95,6 +95,19 @@ const properties: Properties[] = [
     contact: [+270101237777, "hello@mabonengsociety.co.za"],
     isAvailable: true,
   },
+  {
+    image: "images/theOnyx.png",
+    title: "The Onyx",
+    PricePerNight: 200,
+    location: {
+      firstLine: "254 Fox Street",
+      city: "Johannesburg",
+      code: 2001,
+      country: "South Africa",
+    },
+    contact: [+27818656545, "hello@mabonengsociety.co.za"],
+    isAvailable: true,
+  },
 ];
 
 
