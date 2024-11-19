@@ -5,8 +5,10 @@
 const propertyContainer = document.querySelector('.properties');
 const footer = document.querySelector('.footer')
 
-import { totalReviews, populateUser } from './utils';
+import { totalReviews, populateUser, showDetails } from './utils';
 import { LoyaltyUser, Permissions, loyaltyUser } from './enums';
+import { Price, Title } from './type';
+
 let isLoggedIn: boolean;
 
 
@@ -48,18 +50,19 @@ const you = {
   stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
+
 // properties
 const properties: {
   image: string;
-  title: string;
-  PricePerNight: number;
+  title: Title;
+  PricePerNight: Price;
   location: {
     firstLine: string;
     city: string;
     code: number;
     country: string;
   };
-  contact: [ number, string];
+  contact: [number, string];
   isAvailable: boolean;
 }[] = [
   {
@@ -72,7 +75,7 @@ const properties: {
       code: 2094,
       country: "South Africa",
     },
-    contact: [ +270101235555, "frontdesk@hallmarkhotel.co.za"],
+    contact: [+270101235555, "frontdesk@hallmarkhotel.co.za"],
     isAvailable: false,
   },
   {
@@ -111,18 +114,11 @@ totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 //function to display the word 'back' and username
 populateUser(you.isReturning, you.firstName);
 
-let authorityStatus: any;
 
-isLoggedIn = false
 
-function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
-   if (authorityStatus) {
-       const priceDisplay = document.createElement('div')
-       priceDisplay.innerHTML = price.toString() + '/night'
-       element.appendChild(priceDisplay)
-   }
-}
+//let authorityStatus: any;
 
+//isLoggedIn = false
 
 //add properties to dashboard
 for(let i = 0; i < properties.length; i++) {
@@ -132,8 +128,8 @@ for(let i = 0; i < properties.length; i++) {
     const image = document.createElement('img')
     image.setAttribute('src', properties[i].image)
     card.appendChild(image)
-    propertyContainer.appendChild(card)
     showDetails(you.permissions, card, properties[i].PricePerNight)
+    propertyContainer.appendChild(card);
     
 }
 
