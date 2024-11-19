@@ -11,17 +11,14 @@ const button = document.querySelector("button");
 import { totalReviews, populateUser, showDetails, getTopTwoReviews } from './utils';
 import { LoyaltyUser, Permissions, loyaltyUser } from './enums';
 import { Price, Title } from './type';
+import { Review, Properties } from './interfaces';
 
 let isLoggedIn: boolean;
 
 
+
 //Reviews
-const reviews: {
-  name: string;
-  stars: number;
-  loyaltyUser: LoyaltyUser;
-  date: string
-}[] = [
+const reviews: Review[] = [
   {
     name: "Sheia",
     stars: 5,
@@ -54,20 +51,9 @@ const you = {
 }
 
 
+
 // properties
-const properties: {
-  image: string;
-  title: Title;
-  PricePerNight: Price;
-  location: {
-    firstLine: string;
-    city: string;
-    code: number;
-    country: string;
-  };
-  contact: [number, string];
-  isAvailable: boolean;
-}[] = [
+const properties: Properties[] = [
   {
     image: "images/HallmarkHouse.png",
     title: "Hallmark House Hotel",
@@ -137,12 +123,7 @@ for(let i = 0; i < properties.length; i++) {
 }
 
 let count = 0;
-function addReviews(array: {
-  name: string;
-  stars: number;
-  loyaltyUser: LoyaltyUser;
-  date: string;
-}[]) : void {
+function addReviews(array: Review[]) : void {
   if (!count) {
     count++;
     const topTwo = getTopTwoReviews(array);
