@@ -78,3 +78,18 @@ body {
     width: 90%;
     background-color: coral;
 }
+
+button {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:goldenrod;
+    color: black;
+}
+
