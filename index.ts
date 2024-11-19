@@ -14,6 +14,7 @@ const button = document.querySelector("button");
 import { totalReviews, populateUser, showDetails, getTopTwoReviews } from './utils';
 import { LoyaltyUser, Permissions } from './enums';
 import { Review, Properties } from './interfaces';
+import MainImage from './classes';
 
 let isLoggedIn: boolean;
 
@@ -158,18 +159,7 @@ button.addEventListener("click", () => addReviews(reviews));
 const currentLocation: [string, string, number] = ['Johannesburg', '16:44', 28]
 footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '℃'
 
-//classes
 
-class MainImage {
-   src: string;
-   title: string;
-   reviews: Review[]
-   constructor(src: string, title: string, reviews: Review[]) {
-        this.src = src
-        this.title = title
-        this.reviews = reviews
-    }
-}
 const yourMainImage = new MainImage(
   "images/Maboneng.png",
   'Maboneng Johannesburg',
