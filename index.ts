@@ -12,8 +12,7 @@ const container = document.querySelector(".container");
 const button = document.querySelector("button");
 
 import { totalReviews, populateUser, showDetails, getTopTwoReviews } from './utils';
-import { LoyaltyUser, Permissions, loyaltyUser } from './enums';
-import { Price, Title } from './type';
+import { LoyaltyUser, Permissions } from './enums';
 import { Review, Properties } from './interfaces';
 
 let isLoggedIn: boolean;
@@ -152,9 +151,23 @@ class MainImage {
    src: string;
    title: string;
    reviews: Review[]
-   constructor(src, title, reviews) {
+   constructor(src: string, title: string, reviews: Review[]) {
         this.src = src
         this.title = title
         this.reviews = reviews
     }
 }
+const yourMainImage = new MainImage(
+  "images/Maboneng.png",
+  'Maboneng Johannesburg',
+  [{
+        name: 'Tina',
+        stars: 5,
+        loyaltyUser: LoyaltyUser.GOLD_USER,
+        date: '12-04-2021'
+    }] )
+
+const mainImageContainer = document.querySelector('.main-image');
+const image = document.createElement('img')
+image.setAttribute('src', yourMainImage.src)
+mainImageContainer.appendChild(image)
