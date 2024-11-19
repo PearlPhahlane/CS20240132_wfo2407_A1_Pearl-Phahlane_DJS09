@@ -2,6 +2,9 @@
 // Write a function that will only accept numbers and attend to
 // all TypeScript weakness flags.
 // : number
+
+
+//Modules
 const propertyContainer = document.querySelector('.properties');
 const footer = document.querySelector('.footer');
 const reviewContainer = document.querySelector(".reviews");
@@ -142,3 +145,16 @@ button.addEventListener("click", () => addReviews(reviews));
 //location
 const currentLocation: [string, string, number] = ['Johannesburg', '16:44', 28]
 footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '℃'
+
+//classes
+
+class MainImage {
+   src: string;
+   title: string;
+   reviews: Review[]
+   constructor(src, title, reviews) {
+        this.src = src
+        this.title = title
+        this.reviews = reviews
+    }
+}
