@@ -16,7 +16,7 @@ import { LoyaltyUser, Permissions } from './enums';
 import { Review, Properties } from './interfaces';
 import MainImage from './classes';
 
-let isLoggedIn: boolean;
+//let isLoggedIn: boolean; commented it out because it's not used in the code
 
 
 
@@ -134,7 +134,7 @@ for(let i = 0; i < properties.length; i++) {
     image.setAttribute('src', properties[i].image)
     card.appendChild(image)
     showDetails(you.permissions, card, properties[i].PricePerNight)
-    propertyContainer.appendChild(card);
+    propertyContainer!.appendChild(card);
     
 }
 
@@ -147,17 +147,17 @@ function addReviews(array: Review[]) : void {
       const card = document.createElement("div");
       card.classList.add("review-card");
       card.innerHTML = topTwo[i].stars + " stars from " + topTwo[i].name;
-      reviewContainer.appendChild(card);
+      reviewContainer!.appendChild(card); //The ! tells TypeScript that I am  certain the element is not null.
     }
-    container.removeChild(button);
+    container!.removeChild(button!);
   }
 }
 
-button.addEventListener("click", () => addReviews(reviews));
+button!.addEventListener("click", () => addReviews(reviews));
 
 //location
 const currentLocation: [string, string, number] = ['Johannesburg', '16:44', 28]
-footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '℃'
+footer!.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '℃'
 
 
 const yourMainImage = new MainImage(
@@ -173,4 +173,4 @@ const yourMainImage = new MainImage(
 const mainImageContainer = document.querySelector('.main-image');
 const image = document.createElement('img')
 image.setAttribute('src', yourMainImage.src)
-mainImageContainer.appendChild(image)
+mainImageContainer!.appendChild(image)
